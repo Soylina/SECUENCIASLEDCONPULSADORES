@@ -1,4 +1,5 @@
-#PRÁCTICA DE LABORATORIO N°3      
+#PRÁCTICA DE LABORATORIO N°3
+#primeras cuatro secuencias
 from machine import Pin as pin
 from utime import sleep, sleep_ms
 led1=pin(13,pin.OUT)
@@ -11,11 +12,12 @@ led7=pin(33,pin.OUT)
 led8=pin(32,pin.OUT)
 amarillo=pin(15,pin.IN)
 verde=pin(4,pin.IN)
-azul=pin(5,pin.IN)
+azul=pin(16,pin.IN)
 negro=pin(18,pin.IN)
 rojo=pin(19,pin.IN)
 para=0.08
 pausa=0.40
+#Va hacia la derecha
 def derecha():
     led1.value(1)
     sleep(para)
@@ -49,6 +51,7 @@ def derecha():
     sleep(para)
     led8.value(0)
     sleep(para)
+#alumbran leds pares    
 def derechapares():
     led2.value(1)
     sleep(pausa)
@@ -66,6 +69,8 @@ def derechapares():
     sleep(pausa)
     led8.value(0)
     sleep(pausa)
+    
+#Va hacia la izquierda  
 def izquierda():
     led8.value(1)
     sleep(para)
@@ -99,56 +104,43 @@ def izquierda():
     sleep(para)
     led1.value(0)
     sleep(para)
+ #alumbran leds pares    
 def izquierdaimpares():
-    led1.value(1)
+    led7.value(1)
     sleep(pausa)
-    led1.value(0)
-    sleep(pausa)
-    led3.value(1)
-    sleep(pausa)
-    led3.value(0)
+    led7.value(0)
     sleep(pausa)
     led5.value(1)
     sleep(pausa)
     led5.value(0)
     sleep(pausa)
-    led7.value(1)
+    led3.value(1)
     sleep(pausa)
-    led7.value(0)
+    led3.value(0)
     sleep(pausa)
+    led1.value(1)
+    sleep(pausa)
+    led1.value(0)
+    sleep(pausa)
+  
 while (True):
-    if (amarillo.value()):
-        derecha()
-        print("si sirvio derecha")
-        if (verde.value()):
-            derechapares()
-            print("sip")
-            if (azul.value()):
-                izquierda()
-                print("si sirvio izquierda")
-        else:
-            if (azul.value()):
-                izquierda()
-                print("sep izqui")
-        
-                
-                
-'''  
-    else:
+ 
         if (azul.value()):
             izquierda()
-            print("si sirvio izquierda")
+            print("izquierda")
+        elif (amarillo.value()):
+            derecha()
+            print("derecha")    
+        elif (verde.value()):
+            derechapares()
+            print("derecha pares")
+        elif (negro.value()):
+            izquierdaimpares()
+            print("izquierda impares")    
+ 
+    
                 
-                if (negro.value()):
-                    izquierdaimpares()
-                    print("sip")
-                    
-                else:
-                  if (negro.value()):
-                    izquierdaimpares()
-                    print("sipi")
-            
-                '''
+
                 
                 
             
