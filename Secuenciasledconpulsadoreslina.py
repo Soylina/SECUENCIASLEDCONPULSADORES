@@ -241,14 +241,14 @@ while True:
         if (azul.value() and amarillo.value() and verde.value() and not negro.value()):
             todos()
             izquierda()
-        if (azul.value() and negro.value() and verde.value() and not amarillo()):
+        if (azul.value() and negro.value() and verde.value() and not amarillo.value()):
             derechapares()
             izquierdaimpares()    
         if (verde.value() and amarillo.value() and negro.value()):
             miti()
             mitad()
  #4 botones
-        if (verde.value() and amarillo.value() and negro.value() and azul()):
+        if (verde.value() and amarillo.value() and negro.value() and azul.value()):
             ida()
             vuelta()
             ida()
